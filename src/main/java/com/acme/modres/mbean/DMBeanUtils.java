@@ -8,7 +8,13 @@ import javax.management.MBeanOperationInfo;
 public final class DMBeanUtils {
 	private static final Logger logger = Logger.getLogger(DMBeanUtils.class.getName());
 	
-
+	/**
+	 * Retrieves an array of MBeanOperationInfo objects based on the provided OpMetadataList.
+	 *
+	 * @param opList the list of operation metadata containing name, description, type, and impact for each operation
+	 * @return an array of MBeanOperationInfo objects, each representing an operation with its metadata
+	 * @throws IllegalArgumentException if the input opList is null or its OpMetadatList is null
+	 */
 	public static MBeanOperationInfo[] getOps(OpMetadataList opList) {
 		MBeanOperationInfo[] ops = null;
 		if (opList == null || opList.getOpMetadatList() == null) {
